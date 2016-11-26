@@ -7,7 +7,7 @@ interface Options {
     player?: number;
 }
 
-export function Add({quantity = 4, cardName = 'unnamed', player = 0}:Options = {}) {
+export function add({quantity = 4, cardName = 'unnamed', player = 0}:Options = {}) {
     return function (gamestate:Gamestate) {
         let zone = gamestate.getZone('library', player);
         for (let i = 0; i < quantity; i++) {

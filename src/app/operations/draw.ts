@@ -6,7 +6,7 @@ interface Options {
     player?: number;
 }
 
-export function Draw({quantity = 4, player = 0}:Options = {}) {
+export function draw({quantity = 4, player = 0}:Options = {}) {
     return function (gamestate:Gamestate) {
         let library = gamestate.getZone('library', player);
         let hand = gamestate.getZone('library', player);

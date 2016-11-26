@@ -5,11 +5,10 @@ interface Options {
     player?: number;
 }
 
-export function Shuffle({player = 0}:Options) {
+export function shuffle({player = 0}:Options) {
     return function (gamestate:Gamestate) {
 		let library = gamestate.getZone('library', player);
-		let newOrder = fisherYatesShuffle(library);
-		library.splice(0, library.length - 1, ...newOrder);
+		fisherYatesShuffle(library);
         return gamestate;
     }
 }
