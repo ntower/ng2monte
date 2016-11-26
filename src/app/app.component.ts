@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Gamestate } from './gamestate';
 
 @Component({
   selector: 'app-root',
