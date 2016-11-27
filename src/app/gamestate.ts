@@ -1,7 +1,7 @@
 import { Zone } from './zone'
 import { Player, nobody } from './Player';
 
-const sharedZones = [];
+const sharedZones = ['stack'];
 const personalZones = ['library', 'hand'];
 
 export class Gamestate {

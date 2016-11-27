@@ -1,16 +1,27 @@
 import { Gamestate } from '../gamestate';
 import { Card } from '../card';
+import { Operation } from './operation';
 
 interface Options {
     player?: number;
 }
 
-export function shuffle({player = 0}:Options) {
-    return function (gamestate:Gamestate) {
-		let library = gamestate.getZone('library', player);
+export class Shuffle implements Operation {
+	player: number;
+	constructor({player = 0}:Options) {
+
+	}
+    execute(gamestate: Gamestate): Gamestate {
+		let library = gamestate.getZone('library', this.player);
 		fisherYatesShuffle(library);
         return gamestate;
     }
+	shortDescription(): string {
+		return 'Shuffle';
+	}
+	longDescription(): string {
+		return `Player ${this.player} shuffles their library`;
+	}
 }
 
 function fisherYatesShuffle(deck:Array<any>) {
